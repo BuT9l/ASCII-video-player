@@ -5,6 +5,6 @@ project('BadAppleTerminal', 'cpp',
 opencv = dependency('opencv4')
 
 executable('videoplayer.bin',
-           'code.cpp',
+           'src/main.cpp',
            dependencies : [opencv],
            install : false)
