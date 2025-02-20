@@ -24,10 +24,10 @@ int main(int argc, char** argv)
   double font_as = 1.0f / 2.0f;
   std::string out_buffer;
 
-  while(1)
+  time_start = timer::now();
+  while(Video.read(frame))
   {
-    time_start = timer::now();
-    Video.read(frame);
+    
     int w = 0, h = 0;
     get_terminal_size(w, h);
     
@@ -57,7 +57,8 @@ int main(int argc, char** argv)
     int towait = frametime - timediff.count();
     if(towait > 0)
     { wait_us(towait); }
-  }
+    time_start = timer::now();
+}
   
   Video.release();
   std::cout << "Unable to read next frame, exiting..." << std::endl;
