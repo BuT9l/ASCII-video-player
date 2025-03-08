@@ -2,3 +2,4 @@ BadApple.webm
 build
 .clangd
 .cache
+deps/
